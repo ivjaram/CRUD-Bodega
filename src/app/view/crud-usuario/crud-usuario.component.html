@@ -1,0 +1,86 @@
+
+<div class="contenedor">
+  <h1>Ingreso de Usuarios</h1>
+    <form class="row g-3 needs-validation" (submit)="guardar()" [formGroup]="UsuarioForm" novalidate>
+
+        <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Nombre</label>
+        <input type="text" class="form-control"  formControlName="Nombre" placeholder="ivancito" >
+        </div>
+
+        <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Apellido</label>
+        <input type="text" class="form-control"formControlName="Apellido" placeholder="El maquina" >
+        </div>
+
+        <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label">Correo</label>
+        <div class="input-group has-validation">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control"  formControlName="Correo"  aria-describedby="inputGroupPrepend"  placeholder="ivanelmaquina@gmail.com">
+        </div>
+        </div>
+
+        <div class="mb-1 col-2">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" formControlName="Contraseña" >
+        </div>
+
+        <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">Rango</label>
+        <select class="form-select"  >
+            <option selected disabled value="">--Seleccione--</option>
+            <option>Nuevo</option>
+            <option formControlName="Rango">1 año</option>
+            <option formControlName="Rango">2 años</option>
+            <option formControlName="Rango">3 o mas años</option>
+        </select>
+        </div>
+    
+        <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" >
+            <label class="form-check-label" for="invalidCheck">
+            Acepta los Terminos de Inicio Segun yo
+            </label>
+        </div>
+        </div>
+
+        <div class="input input-group buttons">
+          <input class="btn btn-success" type="submit" value="Guardar" [disabled]="!UsuarioForm.valid">
+          <input class="btn btn-primary" type="button" value="Actualizar" (click)="actualizarUsuario()" *ngIf="actualizar">
+          <input class="btn btn-warning" type="button" value="Limpiar">
+      </div>
+    </form>
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+      {{message}}
+     </div>
+     <div class="alert alert-success" role="alert" *ngIf="guardado">
+       {{message}}
+      </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Usuario of usuarios">
+            <th scope="row">{{Usuario.id}}</th>
+            <td>{{Usuario.Nombre}}</td>
+            <td>{{Usuario.Apellido}}</td>
+            <td>{{Usuario.Correo}}</td>
+            <td>{{Usuario.Contrasena}}</td>
+            <td>{{Usuario.Rango}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="editar(Usuario)">Editar</button>  
+                <button class="btn btn-danger" (click)="eliminarUsuario(Usuario.id)">Eliminar</button>      
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

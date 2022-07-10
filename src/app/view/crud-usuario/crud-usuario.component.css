@@ -1,0 +1,14 @@
+*{
+    margin: 10px;
+   
+}
+input{
+    margin-top: 10px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.contenedor h1{
+    text-align: center;
+}

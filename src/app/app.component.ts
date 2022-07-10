@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductoServiceService } from './Service/producto.service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bodega-app';
+
+  constructor(private ProductoService:ProductoServiceService){
+    
+  }
 }
