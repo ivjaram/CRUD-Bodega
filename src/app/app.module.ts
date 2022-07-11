@@ -10,7 +10,7 @@ import { CrudUsuarioComponent } from './view/crud-usuario/crud-usuario.component
 import { HomeComponent } from './view/home/home.component';
 import { BodegaComponent } from './view/bodega/bodega.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchComponent } from './shared/search/search.component';
+
 
 
 @NgModule({
@@ -20,8 +20,8 @@ import { SearchComponent } from './shared/search/search.component';
     CrudProductoComponent,
     CrudUsuarioComponent,
     HomeComponent,
-    BodegaComponent,
-    SearchComponent
+    BodegaComponent
+    
   ],
   imports: [
     BrowserModule,

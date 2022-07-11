@@ -1,7 +1,8 @@
 
 <div class="contenedor">
   <h1>Ingreso de Usuarios</h1>
-    <form class="row g-3 needs-validation" (submit)="guardar()" [formGroup]="UsuarioForm" novalidate>
+  <div class="row">
+    <form class="row g-3 needs-validation" (submit)="guardar()" [formGroup]="UsuarioForm">
 
         <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Nombre</label>
@@ -23,18 +24,12 @@
 
         <div class="mb-1 col-2">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" formControlName="Contraseña" >
+            <input type="password" class="form-control" formControlName="Contrasena" >
         </div>
 
         <div class="col-md-3">
         <label for="validationCustom04" class="form-label">Rango</label>
-        <select class="form-select"  >
-            <option selected disabled value="">--Seleccione--</option>
-            <option>Nuevo</option>
-            <option formControlName="Rango">1 año</option>
-            <option formControlName="Rango">2 años</option>
-            <option formControlName="Rango">3 o mas años</option>
-        </select>
+        <input type="text" class="form-control"formControlName="Rango" placeholder="1 año" >
         </div>
     
         <div class="col-12">
@@ -58,27 +53,30 @@
      <div class="alert alert-success" role="alert" *ngIf="guardado">
        {{message}}
       </div>
+    </div>
     <table class="table">
         <thead>
           <tr>
             <th scope="col">#ID</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Contrasena</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Rango</th>
             <th scope="col">Opciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let Usuario of usuarios">
-            <th scope="row">{{Usuario.id}}</th>
-            <td>{{Usuario.Nombre}}</td>
-            <td>{{Usuario.Apellido}}</td>
-            <td>{{Usuario.Correo}}</td>
-            <td>{{Usuario.Contrasena}}</td>
-            <td>{{Usuario.Rango}}</td>
+          <tr *ngFor="let usuario of usuarios">
+            <th scope="row">{{usuario.id}}</th>
+            <td>{{usuario.Apellido}}</td>
+            <td>{{usuario.Contrasena}}</td>
+            <td>{{usuario.Nombre}}</td>
+            <td>{{usuario.Correo}}</td>
+            <td>{{usuario.Rango}}</td>
             <td>
-                <button class="btn btn-primary" (click)="editar(Usuario)">Editar</button>  
-                <button class="btn btn-danger" (click)="eliminarUsuario(Usuario.id)">Eliminar</button>      
+                <button class="btn btn-primary" (click)="editar(usuario)">Editar</button>  
+                <button class="btn btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button>      
             </td>
           </tr>
         </tbody>

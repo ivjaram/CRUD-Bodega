@@ -12,7 +12,7 @@ export class ProductoServiceService {
   constructor(private httpClient: HttpClient) { }
     //GET
     obtenerProductos() {
-      return this.httpClient.get<Producto[]>("http://localhost:8080/api/v1/producto");
+      return this.httpClient.get<Producto[]>("http://localhost:8080/api/v1/producto/");
     }
   
     //POST

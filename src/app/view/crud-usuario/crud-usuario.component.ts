@@ -13,21 +13,21 @@ export class CrudUsuarioComponent implements OnInit {
 
   
   usuarios:Usuario[] = [];
-  Usuario: Usuario;
+  usuario: Usuario;
   UsuarioForm: FormGroup;
   message: string = "";
   error: boolean = false;
   guardado: boolean = false;
   actualizar:boolean = false;
   UsuarioActualizar:Usuario;
-  constructor(private fb: FormBuilder, private UsuarioServiceService:UsuarioServiceService) {
-    this.Usuario = new Usuario();
+  constructor(private fb: FormBuilder, private UsuarioService:UsuarioServiceService) {
+    this.usuario = new Usuario();
     this.UsuarioActualizar = new Usuario();
     this.UsuarioForm = this.fb.group({
-      Nombre: ['', Validators.required],
       Apellido: ['', Validators.required],
-      Correo: ['', Validators.required],
       Contrasena: ['', Validators.required],
+      Correo: ['', Validators.required],
+      Nombre: ['', Validators.required],
       Rango: ['', Validators.required]
     }
     )
@@ -37,15 +37,15 @@ export class CrudUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
   guardar() {
-    let Usuario: Usuario = {
+    let usuario: Usuario = {
       id: 0,
-      Correo: this.UsuarioForm.get("Correo")?.value,
-      Nombre: this.UsuarioForm.get("Nombre")?.value,
       Apellido: this.UsuarioForm.get("Apellido")?.value,
       Contrasena: this.UsuarioForm.get("Contrasena")?.value,
+      Correo: this.UsuarioForm.get("Correo")?.value,
+      Nombre: this.UsuarioForm.get("Nombre")?.value,
       Rango: this.UsuarioForm.get("Rango")?.value
     }
-    this.UsuarioServiceService.crearUsuario(Usuario)
+    this.UsuarioService.crearUsuario(usuario)
       .subscribe(
         //RESPUESTA CORRECTA
         (respuesta) => {
@@ -65,27 +65,27 @@ export class CrudUsuarioComponent implements OnInit {
         })                             
   }
   cargarInfoTabla(){
-    this.UsuarioServiceService.obtenerUsuarios().subscribe(
+    this.UsuarioService.obtenerUsuarios().subscribe(
       respuesta => {this.usuarios = respuesta;
                   console.log(this.usuarios);}
     )
   }
-  editar(Usuario:Usuario){
-    this.UsuarioForm.get("Correo")?.setValue(Usuario.Correo)
-    this.UsuarioForm.get("Nombre")?.setValue(Usuario.Nombre)
-    this.UsuarioForm.get("Apellido")?.setValue(Usuario.Apellido)
-    this.UsuarioForm.get("Contrasena")?.setValue(Usuario.Contrasena)
-    this.UsuarioForm.get("Rango")?.setValue(Usuario.Rango)
-    this.UsuarioActualizar = Usuario;
+  editar(usuario:Usuario){
+    this.UsuarioForm.get("Apellido")?.setValue(usuario.Apellido)
+    this.UsuarioForm.get("Contrasena")?.setValue(usuario.Contrasena)
+    this.UsuarioForm.get("Correo")?.setValue(usuario.Correo)
+    this.UsuarioForm.get("Nombre")?.setValue(usuario.Nombre)
+    this.UsuarioForm.get("Rango")?.setValue(usuario.Rango)
+    this.UsuarioActualizar = usuario;
     this.actualizar = true;
   }
   actualizarUsuario(){
-    this.UsuarioActualizar.Correo = this.UsuarioForm.get("Correo")?.value,
-    this.UsuarioActualizar.Nombre = this.UsuarioForm.get("Nombre")?.value,
     this.UsuarioActualizar.Apellido = this.UsuarioForm.get("Apellido")?.value,
     this.UsuarioActualizar.Contrasena = this.UsuarioForm.get("Contrasena")?.value,
+    this.UsuarioActualizar.Correo = this.UsuarioForm.get("Correo")?.value,
+    this.UsuarioActualizar.Nombre = this.UsuarioForm.get("Nombre")?.value,
     this.UsuarioActualizar.Rango = this.UsuarioForm.get("Rango")?.value,
-    this.UsuarioServiceService.actualizarUsuario(this.UsuarioActualizar).subscribe(
+    this.UsuarioService.actualizarUsuario(this.UsuarioActualizar).subscribe(
       respuesta => {
         this.cargarInfoTabla();
         this.actualizar = false;
@@ -96,11 +96,13 @@ export class CrudUsuarioComponent implements OnInit {
   }
   eliminarUsuario(id:number){
     console.log("HOLa")
-    this.UsuarioServiceService.eliminarUsuario(id).subscribe(
+    this.UsuarioService.eliminarUsuario(id).subscribe(
       
       respuesta => this.cargarInfoTabla()
     )
   }
-
+  mostrarData(){
+    this.UsuarioService.mensaje = "Esta data se encuentra en el servicio"
+  }
 
 }

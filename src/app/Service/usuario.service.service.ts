@@ -7,21 +7,23 @@ import { Usuario } from '../interface/Usuario';
 })
 export class UsuarioServiceService {
 
-  constructor(private HttpClient: HttpClient) { }
+  public mensaje = "";
+
+  constructor(private httpClient: HttpClient) { }
   //GET
   obtenerUsuarios(){
-    return this.HttpClient.get<Usuario[]>("http://localhost:8080/api/v1/usuario/")
+    return this.httpClient.get<Usuario[]>("http://localhost:8080/api/v1/usuario/");
   }
   //POST
   crearUsuario(usuario:Usuario){
-    return this.HttpClient.post("http://localhost:8080/api/v1/usuario/",usuario);
+    return this.httpClient.post("http://localhost:8080/api/v1/usuario/",usuario);
   }
   //DELETE
   eliminarUsuario(id:number){
-return this.HttpClient.delete(`http://localhost:8080/api/v1/usuario/{id}?id=${id}`);
+return this.httpClient.delete(`http://localhost:8080/api/v1/usuario/{id}?id=${id}`);
   }
   //PUT
-  actualizarUsuario(Usuario:Usuario){
-    return this.HttpClient.put("http://localhost:8080/api/v1/usuario/",Usuario);
+  actualizarUsuario(usuario:Usuario){
+    return this.httpClient.put("http://localhost:8080/api/v1/usuario/",usuario)
   }
 }

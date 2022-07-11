@@ -6,8 +6,9 @@ import { CrudUsuarioComponent } from './view/crud-usuario/crud-usuario.component
 import { BodegaComponent } from './view/bodega/bodega.component';
 
 const routes: Routes = [
-  {path: 'bodega', component: BodegaComponent},
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'bodega', component: BodegaComponent},
   {path: 'productos', component: CrudProductoComponent},
   {path: 'usuarios', component: CrudUsuarioComponent}
 ];

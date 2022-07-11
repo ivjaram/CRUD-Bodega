@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductoServiceService } from './Service/producto.service.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,5 @@ import { ProductoServiceService } from './Service/producto.service.service';
 export class AppComponent {
   title = 'Bodega-app';
 
-  constructor(private ProductoService:ProductoServiceService){
-    
-  }
+  
 }
