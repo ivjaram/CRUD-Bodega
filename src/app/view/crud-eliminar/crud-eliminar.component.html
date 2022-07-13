@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <h1>Eliminar Productos</h1>
+          <div class="row">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let producto of productos">
+                    <th scope="row">{{producto.id}}</th>
+                    <td>{{producto.descripcion}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.cantidad}}</td>
+                    <td>
+                         
+                        <button class="btn btn-danger" (click)="eliminarProducto(producto.id)" >Eliminar</button>      
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>

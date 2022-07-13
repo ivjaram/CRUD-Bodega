@@ -1,0 +1,11 @@
+.row{
+    margin-top: 10px;
+}
+h1{
+    text-align: center;
+}
+.buttons{
+    width: 50%;
+    display: flex;
+    padding: 10px;
+}

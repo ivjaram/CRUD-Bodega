@@ -1,117 +1,89 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<div class="container1">
-<div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="text-align: center;">
-  <button type="button" class="btn btn-primary">1</button>
-  <button type="button" class="btn btn-primary">2</button>
-
-  <div class="btn-group" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      Anuncios
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <li><a class="dropdown-item" href="#">Ciel</a></li>
-      <li><a class="dropdown-item" href="#">Nobile</a></li>
-    </ul>
-  </div>
-</div>
-</div>
-<div class="container">
-        
-    <div class="row w-50">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="../../../assets/img/1.jpg" width="850px" height="450px" alt=" ">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../../../assets/img/2.jpg" width="850px" height="450px" alt=" ">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../../../assets/img/3.jpg"  width="850px" height="450px" alt=" ">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="..." role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Atras</span>
-        </a>
-        <a class="carousel-control-next" href="..." role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Siguiente</span>
-        </a>
+<div class="general">
+  <nav class="navbar bg-light ">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
-    </div>
-    <div class="row w-50">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item ">
-            <img class="d-block w-100" src="../../../assets/img/1.jpg" width="850px" height="450px" alt=" ">
-          </div>
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="../../../assets/img/2.jpg" width="850px" height="450px" alt=" ">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../../../assets/img/3.jpg"  width="850px" height="450px" alt=" ">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="..." role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Atras</span>
-        </a>
-        <a class="carousel-control-next" href="..." role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Siguiente</span>
-        </a>
-      </div>
-    </div>
-</div>
-<div class="container">
-        
-  <div class="row w-50">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item ">
-          <img class="d-block w-100" src="../../../assets/img/1.jpg" width="850px" height="450px" alt=" ">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="../../../assets/img/2.jpg" width="850px" height="450px" alt=" ">
-        </div>
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="../../../assets/img/3.jpg"  width="850px" height="450px" alt=" ">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="..." role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Atras</span>
-      </a>
-      <a class="carousel-control-next" href="..." role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Siguiente</span>
-      </a>
-    </div>
-  </div>
-  <div class="row w-50">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item ">
-          <img class="d-block w-100" src="../../../assets/img/1.jpg" width="850px" height="450px" alt=" ">
-        </div>
-        <div class="carousel-item ">
-          <img class="d-block w-100" src="../../../assets/img/2.jpg" width="850px" height="450px" alt=" ">
-        </div>
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="../../../assets/img/4.jpg"  width="850px" height="450px" alt=" ">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="..." role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Atras</span>
-      </a>
-      <a class="carousel-control-next" href="..." role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Siguiente</span>
-      </a>
-    </div>
-  </div>
+    </nav>
 </div>
 
+<div class="contenedor m-5 p-5">
+  
+  <h1></h1>
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://r.btcdn.co/r/eyJzaG9wX2lkIjo0MDY0LCJnIjoiMTAwMHgifQ/f94f9d776de57d4/687194-7801620852580.jpg" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Kem 350ML</h5>
+      <p class="card-text">$719 CLP</p>
+      <a [routerLink]="['Actualizar']" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://jumbo.vtexassets.com/arquivos/ids/435825/Bebida-original-350-ml.jpg?v=637568609978900000" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Coca Cola 350ML</h5>
+      <p class="card-text">$800 CLP</p>
+      <a [routerLink]="['Actualizar']" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://jumbo.vtexassets.com/arquivos/ids/435843/Bebida-lata-350-ml.jpg?v=637568613263070000" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Sprite 350ML</h5>
+      <p class="card-text">$800 CLP</p>
+      <a href="http://localhost:4200/productos" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://jumbo.vtexassets.com/arquivos/ids/284244/Principal-61745.jpg?v=636826668546270000" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Pap 350ML</h5>
+      <p class="card-text">$719 CLP</p>
+      <a href="#" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+  </div>
+  <div class="contenedor m-5 p-5">
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW1CcDtImZywRXpOZxOh-SaRAnLfUp-roXtA&usqp=CAU" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Canada Dry 350ML</h5>
+      <p class="card-text">$800 CLP</p>
+      <a href="#" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://unimarc.vtexassets.com/arquivos/ids/220974-480-480/000000000000558795-DIS-01.jpg?v=637701837279430000" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Nordic Mist 350ML</h5>
+      <p class="card-text">$890 CLP</p>
+      <a href="#" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://www.distribuidoralamartina.cl/wp-content/uploads/2021/04/cristal-lata-330ml-1.png" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Cristal 350ML</h5>
+      <p class="card-text">$1000 CLP</p>
+      <a href="#" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://www.distribuidoralamartina.cl/wp-content/uploads/2021/04/royal-guard-350ml-1.png" alt="Card image cap">
+      <hr>
+      <div class="card-body">
+      <h5 class="card-title">Royal Guard 350ML</h5>
+      <p class="card-text">$1000 CLP</p>
+      <a href="#" class="btn btn-primary">Añadir Carro</a>
+      </div>
+  </div>
+</div>

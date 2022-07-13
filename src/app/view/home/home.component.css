@@ -1,18 +1,18 @@
-.container{
-    text-align: center;
-    margin: 10px;
-    display: flex; 
+.contenedor{
+    background-image: url(../../../assets/img/fondo2.jpg);
+    display:  flex;
+    border: 10px;
     justify-content: space-between;
-    
-
-}
-.container1{
-    text-align: center;
-    margin: 20px;
-}
-.row{
-    margin-top: 10px;
-    
    
+    
 }
-
+.card{
+   
+    padding: 20px;
+   
+    
+}
+.general{
+    width: 100%;
+    
+}

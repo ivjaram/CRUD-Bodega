@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Producto } from 'src/app/interface/Producto';
+import { Producto } from '../../interface/Producto';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductoServiceService } from '../../Service/producto.service.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-crud-producto',
-  templateUrl: './crud-producto.component.html',
-  styleUrls: ['./crud-producto.component.css']
+  selector: 'app-crud-crear',
+  templateUrl: './crud-crear.component.html',
+  styleUrls: ['./crud-crear.component.css']
 })
-export class CrudProductoComponent implements OnInit {
-/* 
+export class CrudCrearComponent implements OnInit {
   productos:Producto[] = [];
   producto: Producto;
   productoForm: FormGroup;
@@ -19,7 +19,7 @@ export class CrudProductoComponent implements OnInit {
   actualizar:boolean = false;
   productoActualizar:Producto;
 
-  constructor(private fb: FormBuilder, private productoService: ProductoServiceService) {
+  constructor(private fb: FormBuilder, private productoService: ProductoServiceService,private router:Router) {
     this.producto = new Producto();
     this.productoActualizar = new Producto();
     this.productoForm = this.fb.group({
@@ -30,10 +30,10 @@ export class CrudProductoComponent implements OnInit {
     )
     this.cargarInfoTabla();
   }
-  */
+
   ngOnInit(): void {
+
   }
-  /*
   guardar() {
     let producto: Producto = {
       id: 0,
@@ -46,6 +46,7 @@ export class CrudProductoComponent implements OnInit {
         //RESPUESTA CORRECTA
         (respuesta) => {
         this.message = "Producto guardado con exito.";
+        this.router.navigate(['Listar']);
         this.guardado = !this.guardado;
         setTimeout(() => {
           this.guardado = !this.guardado
@@ -60,22 +61,6 @@ export class CrudProductoComponent implements OnInit {
           }, 5000);
         })                             
   }
-
-  cargarInfoTabla(){
-    this.productoService.obtenerProductos().subscribe(
-      respuesta => {this.productos = respuesta;
-                  console.log(this.productos);}
-    )
-  }
-
-  editar(producto:Producto){
-    this.productoForm.get("descripcion")?.setValue(producto.descripcion)
-    this.productoForm.get("precio")?.setValue(producto.precio)
-    this.productoForm.get("cantidad")?.setValue(producto.cantidad)
-    this.productoActualizar = producto;
-    this.actualizar = true;
-  }
-
   actualizarProducto(){
     this.productoActualizar.descripcion = this.productoForm.get("descripcion")?.value,
     this.productoActualizar.precio = this.productoForm.get("precio")?.value,
@@ -89,16 +74,11 @@ export class CrudProductoComponent implements OnInit {
 
     )
   }
-
-  eliminarProducto(id:number){
-    console.log("HOLa")
-    this.productoService.eliminarProducto(id).subscribe(
-      
-      respuesta => this.cargarInfoTabla()
+  cargarInfoTabla(){
+    this.productoService.obtenerProductos().subscribe(
+      respuesta => {this.productos = respuesta;
+                  console.log(this.productos);}
     )
   }
 
-  mostrarData(){
-    this.productoService.mensaje = "Esta data se encuentra en el servicio"
-  } */
 }

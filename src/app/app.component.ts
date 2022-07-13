@@ -9,6 +9,6 @@ import { ProductoServiceService } from './Service/producto.service.service';
 })
 export class AppComponent {
   title = 'Bodega-app';
-
+constructor(ProductoServiceService:ProductoServiceService){};
   
 }

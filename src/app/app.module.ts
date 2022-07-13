@@ -6,11 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { CrudProductoComponent } from './view/crud-producto/crud-producto.component';
-import { CrudUsuarioComponent } from './view/crud-usuario/crud-usuario.component';
 import { HomeComponent } from './view/home/home.component';
-import { BodegaComponent } from './view/bodega/bodega.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CrudCrearComponent } from './view/crud-crear/crud-crear.component';
+import { CrudEliminarComponent } from './view/crud-eliminar/crud-eliminar.component';
+import { CrudActualizarComponent } from './view/crud-actualizar/crud-actualizar.component';
+import { CrudListarComponent } from './view/crud-listar/crud-listar.component';
 
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,15 +21,19 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     BannerComponent,
     CrudProductoComponent,
-    CrudUsuarioComponent,
     HomeComponent,
-    BodegaComponent
+    CrudCrearComponent,
+    CrudEliminarComponent,
+    CrudActualizarComponent,
+    CrudListarComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

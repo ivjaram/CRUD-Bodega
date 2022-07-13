@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './view/home/home.component';
-import { CrudProductoComponent } from './view/crud-producto/crud-producto.component';
-import { CrudUsuarioComponent } from './view/crud-usuario/crud-usuario.component';
-import { BodegaComponent } from './view/bodega/bodega.component';
+
+import { CrudCrearComponent } from './view/crud-crear/crud-crear.component';
+import { CrudEliminarComponent } from './view/crud-eliminar/crud-eliminar.component';
+import { CrudActualizarComponent } from './view/crud-actualizar/crud-actualizar.component';
+import { CrudListarComponent } from './view/crud-listar/crud-listar.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  
   {path: 'home', component: HomeComponent},
-  {path: 'bodega', component: BodegaComponent},
-  {path: 'productos', component: CrudProductoComponent},
-  {path: 'usuarios', component: CrudUsuarioComponent}
+  {path: 'crear', component: CrudCrearComponent},
+  {path: 'Eliminar', component: CrudEliminarComponent},
+  {path: 'Actualizar', component: CrudActualizarComponent},
+  {path: 'Listar', component: CrudListarComponent}
 ];
 
 @NgModule({

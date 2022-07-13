@@ -19,7 +19,11 @@ export class ProductoServiceService {
     crearProducto(producto:Producto) {
       return this.httpClient.post("http://localhost:8080/api/v1/producto/", producto);
     }
-  
+    //GET x ID
+    capturarxID(id:Number){
+      return this.httpClient.get(`http://localhost:8080/api/v1/producto/{id}?id=${id}`)
+    }
+
     //DELETE
     eliminarProducto(id:number) {
       return this.httpClient.delete(`http://localhost:8080/api/v1/producto/{id}?id=${id}`);

@@ -1,9 +1,9 @@
 export class Usuario{
     id!:number;
-    Apellido!:string;
-    Contrasena!:string;
-    Correo!:string;
-    Nombre!:string;
-    Rango!:string;
+    apellido!:string;
+    contrasena!:string;
+    correo!:string;
+    nombre!:string;
+    rango!:string;
    constructor(){}
 }

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4">
+          <h1>Actualizar de Productos</h1>
+              <form [formGroup]="productoForm2" >
+                  <div class="input input-group">
+                      <input class="form-control" type="text" formControlName="descripcion" placeholder="Descripcion">
+                  </div>
+                  <div class="input input-group">
+                      <input class="form form-control" type="number" formControlName="precio" placeholder="Precio">
+                  </div>
+                  <div class="input input-group">
+                      <input class="form form-control" type="number" formControlName="cantidad" placeholder="Cantidad">
+                  </div>
+                  <div class="input input-group buttons">
+                     
+                      <input class="btn btn-primary" type="button" value="Actualizar" (click)="actualizarProducto()" *ngIf="actualizar">
+                      <input class="btn btn-warning" type="button" value="Limpiar">
+                  </div>
+          </form>
+          
+      </div>
+</div>
