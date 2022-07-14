@@ -24,12 +24,12 @@ export class CrudEliminarComponent implements OnInit {
     )
   }
   eliminarProducto(id:number){
-    console.log("HOLa")
-
-    this.ProductoService.eliminarProducto(id).subscribe(
+    if(window.confirm("¿Desea Borrar este registro?")){
+      this.ProductoService.eliminarProducto(id).subscribe(
       
-      respuesta => this.cargarInfoTabla()
-    )
+        respuesta => this.cargarInfoTabla()
+      )
+    }
   }
   
 

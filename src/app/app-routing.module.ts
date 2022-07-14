@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './view/home/home.component';
+import { RouterLink } from '@angular/router';;
 
 import { CrudCrearComponent } from './view/crud-crear/crud-crear.component';
 import { CrudEliminarComponent } from './view/crud-eliminar/crud-eliminar.component';
@@ -8,7 +9,7 @@ import { CrudActualizarComponent } from './view/crud-actualizar/crud-actualizar.
 import { CrudListarComponent } from './view/crud-listar/crud-listar.component';
 
 const routes: Routes = [
-  
+  {path: '', pathMatch:'full',redirectTo:'home'},
   {path: 'home', component: HomeComponent},
   {path: 'crear', component: CrudCrearComponent},
   {path: 'Eliminar', component: CrudEliminarComponent},

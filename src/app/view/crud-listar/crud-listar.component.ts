@@ -2,7 +2,8 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { Producto } from '../../interface/Producto';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ProductoServiceService } from '../../Service/producto.service.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router'
+
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./crud-listar.component.css']
 })
 export class CrudListarComponent implements OnInit {
-
+ id:undefined;
 
   productos : Producto[] = [];
   producto: Producto;
@@ -40,18 +41,17 @@ export class CrudListarComponent implements OnInit {
   ngOnInit(): void {
     this.productoService.obtenerProductos()
     .subscribe( productos => this.productos = productos);
+ 
+   
   }
   editar(producto:Producto){
-    this.Router.navigate(['Actualizar']);
+    this.Router.navigateByUrl("/Actualizar")
     this.productoForm.get("descripcion")?.setValue(producto.descripcion)
     this.productoForm.get("precio")?.setValue(producto.precio)
     this.productoForm.get("cantidad")?.setValue(producto.cantidad)
     this.productoActualizar = producto;
     this.actualizar = true;
     
-  }
-  enviarDatos():any{
-    console.log("holi");
   }
  
 }

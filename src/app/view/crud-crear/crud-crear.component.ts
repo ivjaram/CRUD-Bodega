@@ -19,7 +19,7 @@ export class CrudCrearComponent implements OnInit {
   actualizar:boolean = false;
   productoActualizar:Producto;
 
-  constructor(private fb: FormBuilder, private productoService: ProductoServiceService,private router:Router) {
+  constructor(public fb: FormBuilder, private productoService: ProductoServiceService,private router:Router) {
     this.producto = new Producto();
     this.productoActualizar = new Producto();
     this.productoForm = this.fb.group({
